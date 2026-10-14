@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safe Express Bee | Track Your Parcel</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f6fa;
+      color: #222;
+    }
+
+    header {
+      background: #d71920;
+      color: white;
+      padding: 22px 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    header p {
+      margin-bottom: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 55px auto;
+      padding: 25px;
+    }
+
+    .tracking-box {
+      background: white;
+      padding: 30px 22px;
+      border-radius: 14px;
+      box-shadow: 0 5px 22px #00000012;
+      text-align: center;
+    }
+
+    .bee {
+      font-size: 55px;
+    }
+
+    h2 {
+      color: #d71920;
+    }
+
+    input {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      margin: 15px 0;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      background: #d71920;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #b51219;
+    }
+
+    #result {
+      margin-top: 22px;
+      text-align: left;
+      line-height: 1.8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #777;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>🐝 SAFE EXPRESS BEE</h1>
+    <p>Your Parcel, Our Responsibility.</p>
+  </header>
+
+  <main class="container">
+    <section class="tracking-box">
+      <div class="bee">📦</div>
+
+      <h2>Track Your Parcel</h2>
+
+      <p>Enter your tracking ID to check your shipment status.</p>
+
+      <form id="trackingForm">
+        <input
+          type="text"
+          id="trackingId"
+          placeholder="Enter Tracking ID"
+          required
+        >
+
+        <button type="submit">TRACK PARCEL →</button>
+      </form>
+
+      <div id="result" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Safe Express Bee. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("trackingForm").addEventListener(
+      "submit",
+      function(event) {
+        event.preventDefault();
+
+        const trackingId = document
+          .getElementById("trackingId")
+          .value.trim();
+
+        document.getElementById("result").textContent =
+          "Tracking ID: " + trackingId +
+          ". Shipment information is not connected yet. Please try again later.";
+      }
+    );
+  </script>
+
+</body>
+</html>
